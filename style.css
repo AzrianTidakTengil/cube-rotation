@@ -1,0 +1,157 @@
+:root {
+    --width: 200px;
+    --heigh: 200px;
+    background-color: #072856;
+}
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-1 {
+    width: 420px;
+    height: 420px;
+    position: relative;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    transform: rotateY(-10deg);
+    object-position: 50% 50%;
+}
+
+.container-2 {
+    width: 420px;
+    height: 420px;
+    position: relative;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    transform: rotateX(-10deg);
+    object-position: 50% 50%;
+}
+
+.c-1,
+.c-2 {
+    width: 420px;
+    height: 420px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin:50% 50%;
+    transform-box: content-box;
+}
+
+.front-1,
+.back-1,
+.left-1,
+.right-1,
+.top-1,
+.bottom-1 {
+    position: absolute;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px 10px;
+    padding: 10px;
+    background-color: #f8f8f8;
+}
+
+.f {
+    width: calc(var(--width)/3);
+    height: calc(var(--heigh)/3);
+    background-color: #fa5252;
+}
+
+.bc {
+    width: calc(var(--width)/3);
+    height: calc(var(--heigh)/3);
+    background-color: #f76707;
+}
+
+.r {
+    width: calc(var(--width)/3);
+    height: calc(var(--heigh)/3);
+    background-color: #12b886;
+}
+
+.l {
+    width: calc(var(--width)/3);
+    height: calc(var(--heigh)/3);
+    background-color: #4c6ef5;
+}
+
+.t {
+    width: calc(var(--width)/3);
+    height: calc(var(--heigh)/3);
+    background-color: #fab005;
+}
+
+.bt {
+    width: calc(var(--width)/3);
+    height: calc(var(--heigh)/3);
+    background-color: #7950f2;
+}
+
+/* animation cube 1 (up to down) */
+
+.front-1 {
+    transform: translateZ(120px);
+}
+
+.back-1 {
+    transform: translateZ(-120px);
+}
+
+.left-1 {
+    transform: translateX(-120px) rotateY(-90deg);
+}
+
+.right-1 {
+    transform: translateX(120px) rotateY(90deg);
+}
+
+.top-1 {
+    transform: translateY(-120px) rotateX(90deg);
+}
+
+.bottom-1 {
+    transform: translateY(120px) rotateX(-90deg);
+}
+
+.c-1 {
+    animation: turn-1 5s linear infinite;
+    
+}
+
+@keyframes turn-1 {
+    from {
+        transform: rotateX(360deg);
+    }
+
+    to{
+        transform: rotateX(0deg);
+    }
+}
+
+/* cube-2 */
+
+.c-2{
+    animation: turn-2 5s linear infinite;
+}
+
+@keyframes turn-2 {
+    from {
+        transform: rotateY(360deg);
+    }
+
+    to{
+        transform: rotateY(0deg);
+    }
+}
+
